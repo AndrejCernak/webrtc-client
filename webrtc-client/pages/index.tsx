@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 export default function Home() {
   const localVideo = useRef<HTMLVideoElement>(null);
   const remoteVideo = useRef<HTMLVideoElement>(null);
-  const peerRef = useRef<RTCPeerConnection>();
-  const socketRef = useRef<WebSocket>();
+  const peerRef = useRef<RTCPeerConnection | null>(null);
+  const socketRef = useRef<WebSocket | null>(null);
   const [yourId, setYourId] = useState('');
   const [remoteId, setRemoteId] = useState('');
   const [incomingCall, setIncomingCall] = useState<string | null>(null);
